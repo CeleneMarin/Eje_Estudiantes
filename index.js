@@ -1,12 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const todoRoutes = require('./rutas/InvRoutes');
-const authMiddleware = require('./middleware/authMiddleware');
-const authUtils = require('./Middleware/authUtils');
+const todoRoutes = require('./rutas/EstRoutes');
+/*const authMiddleware = require('./middleware/authMiddleware');
+const authUtils = require('./middleware/authUtils');*/
 
 const app = express();
 app.use(bodyParser.json());
-
+/*
 app.post('/login', (req, res) =>{
     const username = req.body.username;
     const password = req.body.password;
@@ -21,9 +21,9 @@ app.post('/login', (req, res) =>{
 });
 
 app.use(authMiddleware);
-
+*/
 // Rutas
-app.use('/api/inventario', todoRoutes);
+app.use('/api/estudiantes', todoRoutes);
 
 const PORT = process.env.PORT || 3000;
 
